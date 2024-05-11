@@ -78,6 +78,8 @@ sudo service apache2 restart
 
 # Reinicia apache
 echo -e "\e[32mReiniciando Apache\e[0m"
+sudo find /var/www/html/cch/api/public -type d -exec chmod 755 {} \;
+sudo find /var/www/html/cch/api/public -type f -exec chmod 644 {} \;
 sudo find /var/www/html/cch/api/storage -type d -exec chmod 775 {} \;
 sudo find /var/www/html/cch/api/storage -type f -exec chmod 664 {} \;
 sudo chown -R www-data:www-data /var/www/html/cch/api/storage
