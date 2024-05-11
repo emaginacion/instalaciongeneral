@@ -7,23 +7,20 @@ echo -e "\e[34mActualizando la lista de paquetes\e[0m"
 sudo apt update
 sudo apt-get update
 
-# Instala versiones específicas de PHP y extensiones necesarias
-echo -e "\e[31mInstalando PHP y extensiones necesarias\e[0m"
+# Instala versiones específicas de PHP 7.3 y extensiones necesarias
+echo -e "\e[31mInstalando PHP 7.3 y extensiones necesarias\e[0m"
 sudo apt-get install php7.3 php7.3-mcrypt php7.3-xml php7.3-gd php7.3-opcache php7.3-mbstring
 
-# Instala MySQL extensiones para PHP
-echo -e "\e[32mInstalando extensiones de MySQL para PHP\e[0m"
-sudo apt-get install php-mysql
+# Instala extensiones de MySQL específicamente para PHP 7.3
+echo -e "\e[32mInstalando extensiones de MySQL para PHP 7.3\e[0m"
 sudo apt-get install php7.3-mysql
 
-# Instala otras extensiones PHP necesarias
-echo -e "\e[34mInstalando otras extensiones de PHP necesarias para OwnCloud\e[0m"
-sudo apt-get install php-zip php-intl php-curl
+# Instala otras extensiones PHP específicas para PHP 7.3
+echo -e "\e[34mInstalando otras extensiones de PHP 7.3 necesarias para OwnCloud\e[0m"
 sudo apt-get install php7.3-zip php7.3-intl php7.3-curl
 
 # instala unzip
 echo -e "\e[31mInstalando unzip\e[0m"
-su
 sudo apt-get install unzip
 
 # Descarga el instalador de Composer y lo ejecuta
@@ -51,8 +48,8 @@ echo -e "\e[31mConfigurando Apache para Laravel\e[0m"
 sudo mv ./laravel.conf /etc/apache2/sites-available/
 sudo a2dissite 000-default.conf && sudo a2ensite laravel.conf && sudo a2enmod rewrite
 
-# Verifica la instalación de extensiones de MySQL en PHP
-echo -e "\e[32mVerificando la instalación de MySQL en PHP\e[0m"
+# Verifica la instalación de extensiones de MySQL en PHP 7.3
+echo -e "\e[32mVerificando la instalación de MySQL en PHP 7.3\e[0m"
 php -m | grep mysql
 
 # Crea un directorio para tu aplicación
