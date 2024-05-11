@@ -1,3 +1,32 @@
+
+# Añade el repositorio PPA de PHP de ondrej/php
+echo "Añadiendo el repositorio de PHP"
+sudo add-apt-repository ppa:ondrej/php
+
+# Actualiza la lista de paquetes
+echo "Actualizando la lista de paquetes"
+sudo apt update
+sudo apt-get update
+
+# Instala versiones específicas de PHP y extensiones necesarias
+echo "Instalando PHP y extensiones necesarias"
+sudo apt-get install php7.3 php7.3-mcrypt php7.3-xml php7.3-gd php7.3-opcache php7.3-mbstring
+
+# Instala MySQL extensiones para PHP
+echo "Instalando extensiones de MySQL para PHP"
+sudo apt-get install php-mysql
+sudo apt-get install php7.3-mysql
+
+# Instala otras extensiones PHP necesarias
+echo "Instalando otras extensiones de PHP necesarias para OwnCloud"
+sudo apt-get install php-zip php-intl php-curl
+sudo apt-get install php7.3-zip php7.3-intl php7.3-curl
+
+# instala unzip
+echo "Instalando unzip"
+su
+sudo apt-get install unzip
+
 # Cambia al directorio /tmp
 echo "Cambiando al directorio /tmp"
 cd /tmp
@@ -22,28 +51,6 @@ sudo mv owncloud /var/www/
 echo "Instalando Composer globalmente"
 sudo mv composer.phar /usr/local/bin/composer
 
-# Añade el repositorio PPA de PHP de ondrej/php
-echo "Añadiendo el repositorio de PHP"
-sudo add-apt-repository ppa:ondrej/php
-
-# Actualiza la lista de paquetes
-echo "Actualizando la lista de paquetes"
-sudo apt update
-sudo apt-get update
-
-# Instala versiones específicas de PHP y extensiones necesarias
-echo "Instalando PHP y extensiones necesarias"
-sudo apt-get install php7.3 php7.3-mcrypt php7.3-xml php7.3-gd php7.3-opcache php7.3-mbstring
-
-# Instala MySQL extensiones para PHP
-echo "Instalando extensiones de MySQL para PHP"
-sudo apt-get install php-mysql
-sudo apt-get install php7.3-mysql
-
-# Instala otras extensiones PHP necesarias
-echo "Instalando otras extensiones de PHP necesarias para OwnCloud"
-sudo apt-get install php-zip php-intl php-curl
-sudo apt-get install php7.3-zip php7.3-intl php7.3-curl
 
 # Mueve la configuración de Apache para Laravel
 echo "Configurando Apache para Laravel"
