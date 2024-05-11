@@ -45,7 +45,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 # Mueve la configuración de Apache para Laravel
 echo -e "\e[31mConfigurando Apache para Laravel\e[0m"
-sudo mv ./laravel.conf /etc/apache2/sites-available/
+sudo cp ./laravel.conf /etc/apache2/sites-available/
 sudo a2dissite 000-default.conf && sudo a2ensite laravel.conf && sudo a2enmod rewrite
 
 # Verifica la instalación de extensiones de MySQL en PHP 7.3
@@ -75,3 +75,9 @@ sudo composer install
 # Reinicia apache
 echo -e "\e[32mReiniciando Apache\e[0m"
 sudo service apache2 restart
+
+# Reinicia apache
+echo -e "\e[32mReiniciando Apache\e[0m"
+sudo find /var/www/html/cch/api/storage -type d -exec chmod 775 {} \;
+sudo find /var/www/html/cch/api/storage -type f -exec chmod 664 {} \;
+sudo chown -R www-data:www-data /var/www/html/cch/api/storage
