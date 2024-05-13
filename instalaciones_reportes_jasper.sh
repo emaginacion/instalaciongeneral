@@ -31,15 +31,6 @@ chmod 777 *.run
 echo "🛠 Ejecutando el instalador de Jasper Server..."
 sudo ./TIB_js-jrs-cp_8.0.0_linux_x86_64.run
 
-# Navegación automática por el instalador
-{
-    echo ""
-    echo "Y"
-    echo "2"
-    # Asumiendo que todos los pasos adicionales son por default, se agregan los 'enter' necesarios
-    for i in {1..10}; do echo ""; done
-    echo "N" # para no instalar los reportes de ejemplo
-} | sudo ./TIB_js-jrs-cp_8.0.0_linux_x86_64.run
 
 # Iniciar el servicio de Jasper Server
 echo "🔄 Deteniendo e iniciando el servicio de Jasper Server..."
