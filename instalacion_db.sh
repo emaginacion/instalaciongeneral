@@ -9,14 +9,12 @@ echo "🛠 Instalando MySQL Server..."
 sudo apt install mysql-server
 
 # Configurar el acceso remoto a MySQL (Opcional)
-read -p "¿Deseas configurar el acceso remoto a MySQL? (s/n): " config_remote
-if [[ "$config_remote" == "s" ]]; then
-  echo "🔧 Configurando acceso remoto a MySQL..."
+
+  echo "🔧 Configurando  MySQL..."
   sudo ufw allow 3306
   sudo sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
   sudo systemctl restart mysql
-  echo "👌 Acceso remoto configurado."
-fi
+  echo "👌 configurado."
 
 # Acceso a MySQL para configuraciones
 echo "🔑 Accediendo a MySQL para configuraciones iniciales..."

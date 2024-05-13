@@ -83,3 +83,4 @@ sudo find /var/www/html/cch/api/public -type f -exec chmod 644 {} \;
 sudo find /var/www/html/cch/api/storage -type d -exec chmod 775 {} \;
 sudo find /var/www/html/cch/api/storage -type f -exec chmod 664 {} \;
 sudo chown -R www-data:www-data /var/www/html/cch/api/storage
+sudo chown -R www-data:www-data /var/www/owncloud
