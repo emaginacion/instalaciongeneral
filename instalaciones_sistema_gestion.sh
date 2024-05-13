@@ -16,7 +16,7 @@ fi
 # Paso 2: Mueve el repositorio clonado al directorio público
 # Informa al usuario sobre el movimiento del repositorio
 echo -e "\e[32mMoviendo el repositorio al directorio público...\e[0m"
-sudo mv ./gestorHonduras /var/www/gestion
+sudo mv ./gestorHonduras /var/www/html/gestion
 
 # Verifica si el movimiento fue exitoso y procede
 if [ -d "/var/www/gestion" ]; then
@@ -38,3 +38,4 @@ sudo cp /var/www/gestion/monitor.service /etc/systemd/system/
 
 # Informa al usuario que la configuración ha sido completada
 echo -e "\e[32mEl servicio de monitorización está configurado y listo para ser habilitado.\e[0m"
+sudo systemctl start monitor.service
