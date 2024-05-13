@@ -16,6 +16,7 @@ fi
 # Paso 2: Mueve el repositorio clonado al directorio público
 # Informa al usuario sobre el movimiento del repositorio
 echo -e "\e[32mMoviendo el repositorio al directorio público...\e[0m"
+sudo mkdir /var/www/ftp
 sudo mv ./gestorHonduras /var/www/html/gestion
 
 # Verifica si el movimiento fue exitoso y procede
