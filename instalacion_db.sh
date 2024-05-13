@@ -32,8 +32,8 @@ echo "📝 Configurando MySQL para JasperReports..."
 echo "🔧 Creando base de datos y usuario para ownCloud..."
 sudo mysql -e "
 CREATE DATABASE IF NOT EXISTS owncloud;
-CREATE USER 'owncloud'@'localhost' IDENTIFIED WITH mysql_native_password BY 'integrac!0nHON';
-GRANT ALL PRIVILEGES ON owncloud.* TO 'owncloud'@'localhost' WITH GRANT OPTION;
+CREATE USER 'owncloud'@'%' IDENTIFIED WITH mysql_native_password BY 'integrac!0nHON';
+GRANT ALL PRIVILEGES ON owncloud.* TO 'owncloud'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 "
 
