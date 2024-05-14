@@ -7,6 +7,10 @@ echo "🚀 Iniciando la instalación de Jasper Server..."
 echo "📥 Descargando el instalador..."
 wget http://integradorpanama.org/jasperinstall.zip
 
+# Instalación de Chromium
+echo "🌐 Instalando Chromium para la generación de reportes..."
+sudo apt-get install chromium-browser
+
 # Instalar unzip si no está instalado
 echo "🔍 Verificando si unzip está instalado..."
 if ! command -v unzip &> /dev/null
@@ -19,9 +23,7 @@ fi
 echo "📂 Descomprimiendo el instalador..."
 unzip jasperinstall.zip
 
-# Instalación de Chromium
-echo "🌐 Instalando Chromium para la generación de reportes..."
-sudo apt-get install chromium-browser
+
 
 # Preparar el archivo .run para ejecución
 echo "🔧 Configurando permisos del instalador..."
