@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  jasperserver:
+    image: public.ecr.aws/m5t3b8m1/jasperserver:latest
+    container_name: jasperserver
+    ports:
+      - "8080:8080"
+    command: ["/bin/sh", "-c", "sudo /opt/jasperreports-server-cp-8.0.0/ctlscript.sh start && tail -f /dev/null"]
+    environment:
+      - JAVA_OPTS=-Xms512m -Xmx1024m
