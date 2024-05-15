@@ -123,3 +123,5 @@ sudo mv /var/www/owncloud/data /var/www/owncloud/data2
 sudo mv ./var/www/owncloud/data /var/www/owncloud/
 sudo chown -R www-data:www-data /var/www/owncloud
 sudo chown -R www-data:www-data /var/www/owncloud/data/
+sudo chown -R www-data:www-data /var/www/html/cch/api/storage
+sudo chmod -R 775 /var/www/html/cch/api/storage
