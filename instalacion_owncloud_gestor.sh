@@ -36,11 +36,14 @@ unzip ./owncloud-10.4.1.zip
 echo -e "\e[32m🚚 Moviendo ownCloud al directorio del servidor web...\e[0m"
 sudo mv owncloud /var/www/
 
+# Mueve la configuración de Apache para Laravel
+echo -e "\e[31m🔧 Configurando Apache para Laravel...\e[0m"
+sudo cp ./laravel.conf /etc/apache2/sites-available/
+sudo a2dissite 000-default.conf && sudo a2ensite laravel.conf && sudo a2enmod rewrite
 
 # Verifica la instalación de extensiones de MySQL en PHP 7.3
 echo -e "\e[32m🔍 Verificando la instalación de MySQL en PHP 7.3...\e[0m"
 php -m | grep mysql
-
 
 
 # Reinicia apache
