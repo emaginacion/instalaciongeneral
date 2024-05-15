@@ -50,7 +50,6 @@ php -m | grep mysql
 echo -e "\e[32m🔄 Reiniciando Apache...\e[0m"
 sudo service apache2 restart
 
-sudo chown -R www-data:www-data /var/www/owncloud
 # sudo mysql -u owncloud -p'integrac!0nHON' owncloud < owncloud.sql
 
 # Este script clona un repositorio y configura un servicio para monitorizar cambios.
@@ -95,3 +94,10 @@ sudo cp /var/www/html/gestion/monitor.service /etc/systemd/system/
 # Informa al usuario que la configuración ha sido completada
 echo -e "\e[32mEl servicio de monitorización está configurado y listo para ser habilitado.\e[0m"
 sudo systemctl start monitor.service
+
+sudo wget http://18.216.185.203/files/owncloud_data_backup.zip
+sudo unzip owncloud_data_backup.zip
+sudo mv /var/www/owncloud/data /var/www/owncloud/data2
+sudo mv ./var/www/owncloud/data /var/www/owncloud/
+sudo chown -R www-data:www-data /var/www/owncloud
+sudo chown -R www-data:www-data /var/www/owncloud/data/
