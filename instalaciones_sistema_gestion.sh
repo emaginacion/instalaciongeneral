@@ -35,7 +35,7 @@ sudo apt-get -y install inotify-tools
 # Paso 4: Configura el servicio de monitorización
 # Copia el archivo de servicio al directorio de systemd para su gestión
 echo -e "\e[32mConfigurando el servicio de monitorización...\e[0m"
-sudo cp /var/www/gestion/monitor.service /etc/systemd/system/
+sudo cp /var/www/html/gestion/monitor.service /etc/systemd/system/
 
 # Informa al usuario que la configuración ha sido completada
 echo -e "\e[32mEl servicio de monitorización está configurado y listo para ser habilitado.\e[0m"
