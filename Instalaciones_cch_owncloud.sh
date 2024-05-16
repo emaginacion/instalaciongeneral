@@ -66,13 +66,7 @@ sudo git clone https://github.com/emaginacion/CCHBackend.git
 echo -e "\e[32m🚚 Moviendo el backend de CCH al directorio API...\e[0m"
 sudo mv ./CCHBackend /var/www/html/cch/api
 
-# Cambia al directorio API
-echo -e "\e[34m📂 Cambiando al directorio API...\e[0m"
-cd /var/www/html/cch/api
 
-# Instala dependencias con Composer
-echo -e "\e[31m📦 Instalando dependencias con Composer...\e[0m"
-sudo composer install
 
 # Reinicia apache
 echo -e "\e[32m🔄 Reiniciando Apache...\e[0m"
@@ -127,3 +121,11 @@ sudo chown -R www-data:www-data /var/www/owncloud
 sudo chown -R www-data:www-data /var/www/owncloud/data/
 sudo chown -R www-data:www-data /var/www/html/cch/api/storage
 sudo chmod -R 775 /var/www/html/cch/api/storage
+
+# Cambia al directorio API
+echo -e "\e[34m📂 Cambiando al directorio API...\e[0m"
+cd /var/www/html/cch/api
+
+# Instala dependencias con Composer
+echo -e "\e[31m📦 Instalando dependencias con Composer...\e[0m"
+sudo composer install
