@@ -122,6 +122,11 @@ sudo chown -R www-data:www-data /var/www/owncloud/data/
 sudo chown -R www-data:www-data /var/www/html/cch/api/storage
 sudo chmod -R 775 /var/www/html/cch/api/storage
 
+sudo wget http://18.216.185.203/files/menu.zip
+sudo unzip menu.zip
+sudo mv ./index.html /var/www/html/
+sudo mv ./assets /var/www/html/
+
 # Cambia al directorio API
 echo -e "\e[34m📂 Cambiando al directorio API...\e[0m"
 cd /var/www/html/cch/api
