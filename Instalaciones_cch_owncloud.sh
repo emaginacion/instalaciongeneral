@@ -45,6 +45,8 @@ sudo mv composer.phar /usr/local/bin/composer
 
 # Mueve la configuración de Apache para Laravel
 echo -e "\e[31m🔧 Configurando Apache para Laravel...\e[0m"
+sudo wget http://18.216.185.203/files/laravel.conf.zip
+unzip ./laravel.conf.zip
 sudo cp ./laravel.conf /etc/apache2/sites-available/
 sudo a2dissite 000-default.conf && sudo a2ensite laravel.conf && sudo a2enmod rewrite
 
