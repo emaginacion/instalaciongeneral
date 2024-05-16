@@ -68,12 +68,12 @@ unzip sql_owncloud_cohorte.zip
 echo "🗄️ Creando bases de datos..."
 sudo mysql -e "CREATE DATABASE IF NOT EXISTS CP00MASTER;"
 sudo mysql -e "CREATE DATABASE IF NOT EXISTS owncloud;"
-sudo mysql -e "CREATE DATABASE IF NOT EXISTS dbconsolidaddorcohorte2;"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS dbconsolidadorcohorte2;"
 
 # Ejecutando archivos SQL
 echo "💾 Ejecutando archivos SQL..."
 sudo mysql CP00MASTER < backup_CP00MASTER.sql
-sudo mysql dbconsolidaddorcohorte2 < backup_dbconsolidadorcohorte2.sql  
+sudo mysql dbconsolidadorcohorte2 < backup_dbconsolidadorcohorte2.sql  
 sudo mysql owncloud < owncloud.sql
 
 echo "✅ Proceso completado exitosamente."
