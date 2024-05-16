@@ -4,6 +4,10 @@
 echo "🔄 Actualizando los paquetes del sistema..."
 sudo apt update
 
+# Instala unzip
+echo -e "\e[31m📂 Instalando unzip...\e[0m"
+sudo apt-get install unzip
+
 # Instalar MySQL Server
 echo "🛠 Instalando MySQL Server..."
 sudo apt install mysql-server
@@ -69,7 +73,7 @@ sudo mysql -e "CREATE DATABASE IF NOT EXISTS dbconsolidaddorcohorte2;"
 # Ejecutando archivos SQL
 echo "💾 Ejecutando archivos SQL..."
 sudo mysql CP00MASTER < backup_CP00MASTER.sql
-sudo mysql dbconsolidaddorcohorte2 < backup_dbconsolidaddorcohorte2.sql
-sudo mysql owncloud < backup_owncloud_cohorte.sql
+sudo mysql dbconsolidaddorcohorte2 < backup_dbconsolidadorcohorte2.sql  
+sudo mysql owncloud < owncloud.sql
 
 echo "✅ Proceso completado exitosamente."
