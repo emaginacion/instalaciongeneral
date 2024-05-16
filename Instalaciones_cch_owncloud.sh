@@ -92,7 +92,7 @@ sudo mkdir /var/www/ftp
 sudo mv ./gestorHonduras /var/www/html/gestion
 
 # Verifica si el movimiento fue exitoso y procede
-if [ -d "/var/www/gestion" ]; then
+if [ -d "/var/www/htmla/gestion" ]; then
     echo -e "\e[32mEl repositorio se ha movido exitosamente al directorio público.\e[0m"
 else
     echo -e "\e[31mError: El movimiento del repositorio ha fallado.\e[0m"
