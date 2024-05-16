@@ -13,6 +13,7 @@ sudo apt install mysql-server
   echo "🔧 Configurando  MySQL..."
   sudo ufw allow 3306
   sudo sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+
   sudo systemctl restart mysql
   echo "👌 configurado."
 
@@ -34,7 +35,41 @@ sudo mysql -e "
 CREATE DATABASE IF NOT EXISTS owncloud;
 CREATE USER 'owncloud'@'%' IDENTIFIED WITH mysql_native_password BY 'integrac!0nHON';
 GRANT ALL PRIVILEGES ON owncloud.* TO 'owncloud'@'%' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES;integrac!0nHON
 "
 
-echo "✅ MySQL configurado correctamente."
+echo "✅ MySQL configurado correctamente. en el servidor de desarrollo. "
+
+wget http://18.216.185.203/files/slq_backup_dbconsolidaddorcohorte2.zip
+
+wget http://18.216.185.203/files/slq_backup_CP00MASTER.zip
+wget http://18.216.185.203/files/slq_backup_CP00MASTER.zip
+
+
+# Descargando archivos ZIP
+echo "📥 Descargando archivos ZIP..."
+
+wget http://18.216.185.203/files/slq_backup_CP00MASTER.zip -O slq_backup_CP00MASTER.zip
+wget http://18.216.185.203/files/slq_backup_dbconsolidaddorcohorte2.zip -O slq_backup_dbconsolidaddorcohorte2.zip
+wget http://18.216.185.203/files/sql_owncloud_cohorte.zip -O sql_owncloud_cohorte.zip
+
+# Descomprimiendo archivos ZIP
+echo "📂 Descomprimiendo archivos ZIP..."
+
+unzip slq_backup_CP00MASTER.zip
+unzip slq_backup_dbconsolidaddorcohorte2.zip
+unzip sql_owncloud_cohorte.zip
+
+# Creando bases de datos
+echo "🗄️ Creando bases de datos..."
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS CP00MASTER;"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS owncloud;"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS dbconsolidaddorcohorte2;"
+
+# Ejecutando archivos SQL
+echo "💾 Ejecutando archivos SQL..."
+sudo mysql CP00MASTER < backup_CP00MASTER.sql
+sudo mysql dbconsolidaddorcohorte2 < backup_dbconsolidaddorcohorte2.sql
+sudo mysql owncloud < backup_owncloud_cohorte.sql
+
+echo "✅ Proceso completado exitosamente."
