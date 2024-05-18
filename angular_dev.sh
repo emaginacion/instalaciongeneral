@@ -17,12 +17,19 @@ npm install -g @angular/cli@9.0.0
 
 sudo chown -R $(whoami) /var/www/ConsolidadorCohorteHonduras/dist/operapp
 sudo chmod -R u+w /var/www/ConsolidadorCohorteHonduras/dist/operapp
-
+sudo chown -R $(whoami) /var/www/ConsolidadorCohorteHonduras/
 npm install
-ln -s /var/www/ConsolidadorCohorteHonduras/
+
 sudo mv /var/www/html/cch/api /var/www/api
 sudo chown -R www-data:www-data /var/www/api/public
 sudo chmod -R 755 /var/www/api/public
 sudo chown -R www-data:www-data /var/www/api/storage
 
 echo "👌 Angular configurado correctamente. en el servidor de desarrollo. "
+
+npm run build --prod
+
+
+sudo vi /etc/apache2/sites-available/laravel.conf
+sudo service apache2 restart
+
